@@ -1,0 +1,48 @@
+CodeBook
+
+Abstract : description of the dataset “tidy.txt” built from Human Activity Recognition database built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.
+
+Subjects : 
+ID of the subjects/persons tested, from 1 to 30.
+Activities:
+1 WALKING : the subject is walking 
+2 WALKING_UPSTAIRS : the subject is climbing stairs
+3 WALKING_DOWNSTAIRS : the subject is descending stairs
+4 SITTING : the subject is seated
+5 STANDING : the subject is standing
+6 LAYING : the subject is laying 
+
+Measures :
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+Variables in the code :
+accelero.Xtrain : dataset “X_train.txt”
+accelero.Ytrain : dataset “Y_train.txt”
+subject.train : dataset "subject_train.txt"
+accelero.Xtest : dataset "X_test.txt"
+accelero.Ytest : dataset "Y_test.txt"
+subject.test : dataset "subject_test.txt" (contains all the ID of the subjects)
+activity.labels : dataset "activity_labels.txt" (contains all the activities)
+features : dataset “features.txt” (contains all the features)
+accelero.Xtrain (the second one) : only the measurements on the mean and standard deviation for each measurement of Xtrain
+accelero.Xtest (the second one) : only the measurements on the mean and standard deviation for each measurement of Xest
+data.train : merger of subject, acceleroYtrain nd accelero.Xtrain. 
+data.test : merger of subject, acceleroYtest and accelero.Xtest.
+final.dataset : merger of data.train and data.test
+final.dataset (second one) : tidy dataset with the average of each variable for each activity and each subject 

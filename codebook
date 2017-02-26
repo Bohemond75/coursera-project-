@@ -1,0 +1,37 @@
+CodeBook
+
+Abstract : description of the dataset “tidy.txt” built from Human Activity Recognition database built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.
+
+Subjects : 
+ID of the subjects/persons tested, from 1 to 30.
+Activities:
+1 WALKING : the subject is walking 
+2 WALKING_UPSTAIRS : the subject is climbing stairs
+3 WALKING_DOWNSTAIRS : the subject is descending stairs
+4 SITTING : the subject is seated
+5 STANDING : the subject is standing
+6 LAYING : the subject is laying 
+
+
+
+Measures :
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+
+

@@ -9,30 +9,35 @@
 ########################################################
 
 
+#If you want the loads to work correctly, change the following line with the path of the directory where you 
+#extracted the zip 
+setwd('C:/Users/Bohémond Flamand/Documents/FIB/first semester/Coursera/project/UCI HAR Dataset/');
+
+
 #
 # The first thing to do is to load the datasets, the train and the test one
 #
 
 #train
-accelero.Xtrain <- read.table("C:/Users/Bohémond Flamand/Documents/FIB/first semester/Coursera/project/UCI HAR Dataset/train/X_train.txt")
-accelero.Ytrain <- read.table("C:/Users/Bohémond Flamand/Documents/FIB/first semester/Coursera/project/UCI HAR Dataset/train/Y_train.txt")
-subject.train <- read.table("C:/Users/Bohémond Flamand/Documents/FIB/first semester/Coursera/project/UCI HAR Dataset/train/subject_train.txt")
+accelero.Xtrain <- read.table("train/X_train.txt")
+accelero.Ytrain <- read.table("train/Y_train.txt")
+subject.train <- read.table("train/subject_train.txt")
 
 #test
-accelero.Xtest <- read.table("C:/Users/Bohémond Flamand/Documents/FIB/first semester/Coursera/project/UCI HAR Dataset/test/X_test.txt")
-accelero.Ytest <- read.table("C:/Users/Bohémond Flamand/Documents/FIB/first semester/Coursera/project/UCI HAR Dataset/test/Y_test.txt")
-subject.test <- read.table("C:/Users/Bohémond Flamand/Documents/FIB/first semester/Coursera/project/UCI HAR Dataset/test/subject_test.txt")
+accelero.Xtest <- read.table("test/X_test.txt")
+accelero.Ytest <- read.table("test/Y_test.txt")
+subject.test <- read.table("test/subject_test.txt")
 
 
 #
 # Now we want to get the activity labels and the features of our datasets
 #
 
-activity.labels <- read.table("C:/Users/Bohémond Flamand/Documents/FIB/first semester/Coursera/project/UCI HAR Dataset/activity_labels.txt")
+activity.labels <- read.table("activity_labels.txt")
 #I don't know why, but the names of the activity labels were integer, so I needed to transform them in characters
 #otherwise for the next part it created an error
 activity.labels[,2] <- as.character(activity.labels[,2])
-features <- read.table("C:/Users/Bohémond Flamand/Documents/FIB/first semester/Coursera/project/UCI HAR Dataset/features.txt")
+features <- read.table("features.txt")
 #same problem with the names of the features
 features[,2] <- as.character(features[,2])
 
@@ -41,8 +46,8 @@ mean.std <- grep(".*mean.*|.*std.*", features[,2])
 mean.std.features <- features[mean.std,2] #names of the features
 
 #we only take what is interesting for us, being the mean and the standard deviation 
-accelero.Xtrain <- read.table("C:/Users/Bohémond Flamand/Documents/FIB/first semester/Coursera/project/UCI HAR Dataset/train/X_train.txt")[mean.std]
-accelero.Xtest <- read.table("C:/Users/Bohémond Flamand/Documents/FIB/first semester/Coursera/project/UCI HAR Dataset/test/X_test.txt")[mean.std]
+accelero.Xtrain <- read.table("train/X_train.txt")[mean.std]
+accelero.Xtest <- read.table("test/X_test.txt")[mean.std]
 
 #with the two next lines we create two datasets data.train and data.test which contain 
 #for each row the subject tested, the variable Y, and all the measurements we are interested in
